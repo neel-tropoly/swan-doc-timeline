@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Swan Documentary — Marketing & Production Timeline</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --dk:#0B1A2E;--nv:#122240;--mn:#1B2D4A;
+  --tl:#1A9E8F;--tlL:#22C4B0;--tlG:rgba(26,158,143,0.15);--tlB:rgba(26,158,143,0.3);
+  --wh:#FFF;--ow:#E8EDF2;--lg:#94A3B8;--mg:#64748B;--sw:rgba(255,255,255,0.85);--fw:rgba(255,255,255,0.06);
+  --blue:#2E6BE6;--blue-lt:#E8F0FD;--blue-xlt:#F3F7FE;
+  --mid:#374151;--muted:#9CA3AF;
+  --border:#E5E7EB;--border-mid:#D1D5DB;
+  --bg:#FFFFFF;--bg2:#F9FAFB;--bg3:#F3F4F6;
+  --ff:'Sora',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--dk);color:var(--wh);font-family:var(--ff);line-height:1.5;overflow-x:hidden}
+
+/* ANIMATIONS */
+@keyframes f1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(20px,-30px) scale(1.05)}}
+@keyframes f2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-15px,25px) scale(1.03)}}
+@keyframes pl{0%,100%{opacity:.35}50%{opacity:.8}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@keyframes scrollBob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+.fade{opacity:0;transform:translateY(20px);transition:opacity .65s,transform .65s}
+.fade.vis{opacity:1;transform:translateY(0)}
+
+/* NAV */
+nav{position:fixed;top:20px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:4px;background:rgba(18,34,64,0.85);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,0.1);border-radius:40px;padding:6px 8px;z-index:100;white-space:nowrap}
+nav button{font-family:var(--ff);font-size:13px;font-weight:400;color:var(--lg);background:none;border:none;padding:6px 14px;border-radius:30px;cursor:pointer;transition:all .2s}
+nav button:hover{color:var(--wh)}
+nav button.active{background:rgba(255,255,255,0.1);color:var(--wh);font-weight:500}
+.nav-cta{background:var(--tl)!important;color:var(--wh)!important;font-weight:500!important;padding:6px 18px!important}
+.nav-cta:hover{background:var(--tlL)!important}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:120px 24px 80px;overflow:hidden;background:var(--dk)}
+.hero-bg{position:absolute;inset:0;background-image:url('Tropoly-CloudyBG.png');background-size:cover;background-position:center top;background-repeat:no-repeat;opacity:.95;pointer-events:none}
+.orb{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none;mix-blend-mode:screen}
+.orb1{width:500px;height:500px;background:radial-gradient(circle,rgba(26,158,143,.22),transparent 70%);top:-60px;left:-60px;animation:f1 18s ease-in-out infinite}
+.orb2{width:400px;height:400px;background:radial-gradient(circle,rgba(46,107,230,.18),transparent 70%);bottom:-60px;right:-60px;animation:f2 22s ease-in-out infinite}
+.orb3{width:260px;height:260px;background:radial-gradient(circle,rgba(26,158,143,.12),transparent 70%);top:55%;left:55%;animation:pl 9s ease-in-out infinite}
+.grid-ov{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:40px;padding:8px 20px;margin-bottom:28px;font-size:13px;color:var(--lg);animation:fadeUp .8s ease both}
+.hero-badge img{height:22px;opacity:.9}
+.badge-sep{width:1px;height:16px;background:rgba(255,255,255,.2)}
+.hero-badge span{font-weight:500;color:var(--wh)}
+.hero h1{font-size:clamp(36px,5.5vw,68px);font-weight:700;line-height:1.1;margin-bottom:16px;animation:fadeUp .8s .1s ease both}
+.hero h1 em{font-style:normal;color:var(--tlL)}
+.hero-sub{font-size:clamp(14px,1.7vw,17px);color:var(--sw);font-weight:300;max-width:620px;line-height:1.75;margin:0 auto 44px;animation:fadeUp .8s .2s ease both}
+.stats{display:flex;border:1px solid rgba(255,255,255,.1);border-radius:16px;overflow:hidden;margin-bottom:48px;background:rgba(255,255,255,.04);animation:fadeUp .8s .3s ease both;flex-wrap:wrap}
+.stat{padding:20px 32px;text-align:center;border-right:1px solid rgba(255,255,255,.1);flex:1;min-width:110px}
+.stat:last-child{border-right:none}
+.stat-val{font-size:24px;font-weight:700}
+.stat-val .hl{color:var(--tlL)}
+.stat-lbl{font-size:10px;color:var(--lg);letter-spacing:.08em;text-transform:uppercase;margin-top:4px}
+.hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s .4s ease both}
+.btn-p{font-family:var(--ff);font-size:15px;font-weight:500;color:var(--wh);background:var(--tl);border:none;padding:14px 34px;border-radius:40px;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-p:hover{background:var(--tlL);transform:translateY(-1px)}
+.btn-o{font-family:var(--ff);font-size:15px;font-weight:400;color:var(--ow);background:transparent;border:1px solid rgba(255,255,255,.2);padding:14px 32px;border-radius:40px;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block}
+.btn-o:hover{border-color:rgba(255,255,255,.45);color:var(--wh)}
+.scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--mg);animation:pl 3s ease-in-out infinite;pointer-events:none}
+.scroll-arrow{font-size:16px;animation:scrollBob 2s ease-in-out infinite}
+
+/* SECTION WRAPPERS */
+.sec-dark{background:var(--nv);padding:72px 0}
+.sec-light{background:var(--bg);padding:0 0 72px}
+.sec-mid{background:var(--mn);padding:72px 0}
+.inner{max-width:1240px;margin:0 auto;padding:0 36px}
+.sec-eyebrow{font-family:'DM Mono',monospace;font-size:11px;color:var(--tl);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.sec-h{font-size:clamp(22px,2.8vw,34px);font-weight:700;line-height:1.2;margin-bottom:8px}
+.sec-sub{font-size:14px;color:var(--lg);font-weight:300;max-width:560px;line-height:1.7}
+.sec-head{margin-bottom:36px}
+.divider{height:1px;background:rgba(255,255,255,.05)}
+
+/* TIMELINE SECTION */
+.tl-wrap{background:var(--bg)}
+.tl-hdr{padding:36px 36px 16px;max-width:1240px;margin:0 auto}
+.tl-eye{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:5px}
+.tl-h{font-size:21px;font-weight:600;color:var(--mid)}
+.tl-s{font-size:12px;color:var(--muted);font-weight:300;margin-top:2px}
+.tabs-row{display:flex;gap:6px;padding:12px 36px 0;max-width:1240px;margin:0 auto;flex-wrap:wrap;align-items:center;border-bottom:1px solid var(--border)}
+.tabs-lbl{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-right:2px}
+.tab{font-family:var(--ff);font-size:11px;font-weight:400;padding:5px 13px;border:1px solid var(--border-mid);border-radius:4px;background:transparent;color:var(--mid);cursor:pointer;transition:all .12s}
+.tab:hover{border-color:var(--blue);color:var(--blue)}
+.tab.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+.edit-hint-tl{font-size:10px;font-weight:300;color:var(--muted);margin-left:auto;font-style:italic}
+.edit-hint-tl span{color:var(--blue)}
+.legend-row{display:flex;flex-wrap:wrap;gap:14px;padding:10px 36px;max-width:1240px;margin:0 auto;border-bottom:1px solid var(--border);background:var(--bg);align-items:center}
+.leg{display:flex;align-items:center;gap:5px;font-size:10px;font-weight:300;color:var(--muted)}
+.lp{width:20px;height:7px;border-radius:3px}
+.ld{width:9px;height:9px;background:var(--blue);transform:rotate(45deg)}
+.gw{overflow-x:auto;padding:0 36px 20px;max-width:1240px;margin:0 auto;background:var(--bg)}
+.tlt{border-collapse:collapse;width:100%;min-width:900px;table-layout:fixed}
+.tlt td,.tlt th{border:none;vertical-align:top;padding:0;font-family:var(--ff)}
+.lc{width:148px;min-width:148px;position:sticky;left:0;z-index:2;background:var(--bg)}
+.lc-in{padding:7px 10px;min-height:46px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--border-mid);cursor:pointer;transition:background .12s}
+.lc-in:hover{background:var(--blue-xlt)}
+.lc-in:hover .lc-nm{color:var(--blue)}
+.ei{font-size:9px;color:var(--muted);margin-top:2px;opacity:0;transition:opacity .12s}
+.lc-in:hover .ei{opacity:1}
+.lc-nm{font-size:11px;font-weight:500;color:var(--mid);line-height:1.3;transition:color .12s}
+.lc-tg{font-size:9px;font-weight:300;color:var(--muted);margin-top:1px}
+.yh{background:var(--bg2);text-align:center;padding:4px 2px;font-size:9px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--border)}
+.yh.y27{background:var(--blue-xlt);color:var(--blue)}
+.mh{background:var(--bg2);text-align:center;padding:5px 2px;font-size:9px;font-weight:400;color:var(--mid);border-bottom:2px solid var(--border)}
+.mh.y27{background:var(--blue-xlt);color:var(--blue)}
+.dc{padding:2px;background:var(--bg);border-bottom:1px solid var(--border);overflow:hidden;vertical-align:top}
+.dc.empty{background:var(--bg2)}
+.dc.y27.empty{background:var(--blue-xlt)}
+td.mg{padding:2px;border-bottom:1px solid var(--border);background:var(--bg);vertical-align:top}
+td.mg.y27{background:var(--bg)}
+.ps{display:flex;flex-direction:column;gap:2px}
+.pill{display:flex;align-items:center;border-radius:4px;padding:4px 7px;font-size:9px;font-weight:400;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-height:22px}
+.pill.a{background:#DBEAFE;color:#1D4ED8}
+.pill.b{background:var(--bg3);color:var(--mid)}
+.pill.launch{background:var(--blue);color:#fff;font-weight:500}
+.grp-h td{background:var(--bg2);border-bottom:1px solid var(--border);border-top:1px solid var(--border)}
+.grp-n{font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:5px 10px;display:block}
+.ms-row td{background:var(--bg);border-top:2px solid var(--blue);border-bottom:1px solid var(--border)}
+.ms-row .lc{background:var(--bg)}
+.ms-lc{padding:7px 10px;border-right:1px solid var(--border-mid)}
+.ms-t{font-size:10px;font-weight:600;color:var(--blue);letter-spacing:.06em;text-transform:uppercase}
+.ms-s{font-size:9px;font-weight:300;color:var(--muted)}
+.ms-c{text-align:center;vertical-align:middle;padding:4px 2px;background:var(--bg);border-bottom:1px solid var(--border)}
+.ms-c.emp{background:var(--bg2)}
+.dw{display:inline-flex;flex-direction:column;align-items:center;gap:3px}
+.dsq{width:9px;height:9px;background:var(--blue);transform:rotate(45deg);margin:3px auto}
+.dlb{font-size:8px;font-weight:500;color:var(--blue);text-align:center;line-height:1.25;max-width:58px}
+.sr td{background:var(--bg);border-bottom:1px solid var(--border)}
+.sr .lc{background:var(--bg)}
+.sr-lc{padding:6px 10px;border-right:1px solid var(--border-mid)}
+.sr-lb{font-size:9px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.sr-c{text-align:center;vertical-align:middle;padding:3px 2px;background:var(--bg);border-bottom:1px solid var(--border);overflow:hidden}
+.sr-c.hp{background:var(--bg3)}
+.sr-c.he{background:var(--blue-xlt)}
+.sr-tx{font-size:8.5px;font-weight:400;color:var(--mid);line-height:1.25;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sr-tx.e{color:var(--blue)}
+
+/* PANEL */
+.pov{display:none;position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:200}
+.pov.open{display:block}
+.pan{position:fixed;top:0;right:0;height:100%;width:460px;background:#fff;box-shadow:-4px 0 32px rgba(0,0,0,.15);z-index:201;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .2s ease}
+.pan.open{transform:translateX(0)}
+.pan-hd{padding:18px 20px 14px;border-bottom:1px solid var(--border);flex-shrink:0;position:relative}
+.pan-ti{font-size:14px;font-weight:600;color:var(--mid)}
+.pan-su{font-size:11px;font-weight:300;color:var(--muted);margin-top:2px}
+.pan-cl{position:absolute;top:16px;right:16px;background:none;border:none;font-size:18px;cursor:pointer;color:var(--muted);line-height:1;padding:4px}
+.pan-cl:hover{color:var(--mid)}
+.pan-bd{flex:1;overflow-y:auto;padding:16px 20px}
+.pan-ft{padding:12px 20px;border-top:1px solid var(--border);display:flex;gap:8px;flex-shrink:0}
+.tl-list{display:flex;flex-direction:column;gap:8px;margin-bottom:14px}
+.ti{border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.ti-hd{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;background:var(--bg2);cursor:pointer;user-select:none}
+.ti-hd:hover{background:var(--bg3)}
+.ti-nm{font-size:11px;font-weight:500;color:var(--mid)}
+.ti-mt{font-size:9.5px;font-weight:300;color:var(--muted);margin-top:1px}
+.ti-r{display:flex;align-items:center;gap:6px}
+.tp{font-size:8.5px;padding:2px 7px;border-radius:3px}
+.tp.a{background:#DBEAFE;color:#1D4ED8}.tp.b{background:var(--bg3);color:var(--mid)}.tp.launch{background:var(--blue);color:#fff}
+.tc{font-size:10px;color:var(--muted);transition:transform .15s}
+.tc.open{transform:rotate(180deg)}
+.ti-bd{padding:12px;border-top:1px solid var(--border);background:#fff;display:none}
+.ti-bd.open{display:block}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px}
+.fr.full{grid-template-columns:1fr}
+.fl{font-size:9px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:3px}
+.fi{font-family:var(--ff);font-size:11px;font-weight:400;color:var(--mid);background:#fff;border:1px solid var(--border-mid);border-radius:4px;padding:6px 8px;width:100%;outline:none}
+.fi:focus{border-color:var(--blue)}
+select.fi{cursor:pointer}
+.ty-row{display:flex;gap:6px;flex-wrap:wrap}
+.ty-btn{font-family:var(--ff);font-size:9.5px;padding:4px 10px;border:1px solid var(--border-mid);border-radius:4px;background:#fff;color:var(--mid);cursor:pointer}
+.ty-btn.sa{background:#DBEAFE;border-color:#93C5FD;color:#1D4ED8}
+.ty-btn.sl{background:var(--blue);border-color:var(--blue);color:#fff}
+.ty-btn.sb{background:var(--bg3);border-color:var(--border-mid);color:var(--mid)}
+.ti-act{display:flex;justify-content:flex-end;gap:8px;margin-top:8px;padding-top:8px;border-top:1px solid var(--border)}
+.del-btn{font-family:var(--ff);font-size:10px;padding:5px 12px;border:1px solid #FCA5A5;border-radius:4px;background:#FEF2F2;color:#DC2626;cursor:pointer}
+.add-btn{font-family:var(--ff);font-size:11px;color:var(--blue);background:var(--blue-xlt);border:1px dashed #93C5FD;border-radius:6px;padding:9px;width:100%;cursor:pointer}
+.ps-btn{font-family:var(--ff);font-size:12px;font-weight:500;background:var(--blue);color:#fff;border:none;border-radius:5px;padding:9px 20px;cursor:pointer;flex:1}
+.pc-btn{font-family:var(--ff);font-size:12px;background:var(--bg2);color:var(--mid);border:1px solid var(--border-mid);border-radius:5px;padding:9px 16px;cursor:pointer}
+.ov-note{font-size:9.5px;color:var(--muted);padding:8px 12px;background:var(--bg2);border-radius:4px;border-left:2px solid var(--border-mid);margin-bottom:12px;line-height:1.5}
+.ov-note strong{color:var(--mid);font-weight:500}
+
+/* OSCAR SECTION */
+.osc-ph{font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--lg);padding:8px 0 4px;border-bottom:1px solid rgba(255,255,255,.08);margin-bottom:4px}
+.oct{border-collapse:collapse;width:100%;margin-bottom:1.5rem}
+.oct td,.oct th{border:none;font-family:var(--ff);vertical-align:top}
+.oct tr+tr td{border-top:1px solid rgba(255,255,255,.06)}
+.och{font-size:9px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border-bottom:2px solid rgba(255,255,255,.1);color:var(--lg)}
+.oc-per{background:rgba(255,255,255,.08);color:var(--wh);padding:8px;font-size:9.5px;font-weight:500;line-height:1.3;border-radius:4px 0 0 4px;vertical-align:middle;width:88px;min-width:88px}
+.oc-pr{background:rgba(255,255,255,.04);padding:7px 8px;font-size:9px;font-weight:300;color:var(--ow);line-height:1.4;border-left:1px solid rgba(255,255,255,.06);width:20%}
+.oc-mk{background:rgba(26,158,143,.1);padding:7px 8px;font-size:9px;font-weight:300;color:var(--ow);line-height:1.4;border-left:1px solid rgba(255,255,255,.06);width:24%}
+.oc-os{background:rgba(46,107,230,.12);padding:7px 8px;font-size:9px;font-weight:300;color:#BFD0F5;line-height:1.4;border-left:1px solid rgba(255,255,255,.06);width:26%}
+.oc-fl{background:rgba(255,255,255,.04);padding:7px 8px;border-left:1px solid rgba(255,255,255,.06);vertical-align:middle;width:16%;min-width:110px}
+.flt{font-size:9px;font-weight:600;color:var(--tlL);line-height:1.3}
+.fle{color:var(--mg);font-size:9px;font-weight:300}
+
+/* BUDGET SECTION */
+.b-note{font-size:10px;font-weight:300;color:var(--muted);margin-bottom:1.25rem;padding:10px 12px;background:var(--bg2);border-radius:4px;border-left:2px solid var(--border-mid);line-height:1.5}
+.b-note strong{font-weight:500;color:var(--mid)}
+.bsec{margin-bottom:2rem}
+.bsec-t{font-size:9px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:6px 0;border-bottom:2px solid var(--border);margin-bottom:4px}
+.bt{border-collapse:collapse;width:100%}
+.bt th,.bt td{font-family:var(--ff);border:none;border-bottom:1px solid var(--border);padding:0;vertical-align:middle}
+.bt thead th{font-size:9px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:6px 10px;border-bottom:2px solid var(--border);background:var(--bg2)}
+.bt tbody tr{background:var(--bg);transition:background .1s}
+.bt tbody tr:hover{background:var(--bg3)}
+.bt tbody tr:last-child td{border-bottom:none}
+.bt td{font-size:9.5px;font-weight:300;color:var(--mid);padding:7px 10px;line-height:1.4;background:transparent}
+.bt td.bn{font-weight:500;color:var(--mid)}
+.bt td.nt{font-size:9px;color:var(--muted);font-style:italic}
+[contenteditable]{font-family:var(--ff);font-size:9.5px;font-weight:300;color:var(--mid);display:inline-block;min-width:60px;max-width:90px;text-align:right;padding:3px 6px;border:1px solid var(--border);border-radius:3px;outline:none;cursor:text;white-space:nowrap;overflow:hidden}
+[contenteditable]:focus{border-color:var(--border-mid)}
+.bt tr.str{background:var(--bg2)}
+.bt tr.str:hover{background:var(--bg3)}
+.bt tr.str td{font-weight:500;color:var(--mid);border-top:2px solid var(--border);padding:8px 10px}
+.bt tr.str td.sv{color:var(--blue);font-weight:600;text-align:right;padding:8px 10px;font-size:9.5px}
+.bt tr.ttr{background:var(--dk)}
+.bt tr.ttr td{color:#fff;font-weight:500;border-bottom:none;padding:10px}
+.bt tr.ttr td.gv{color:var(--tlL);font-size:11px;font-weight:600;text-align:right;padding:10px}
+.cn{width:17%}.cs{width:24%}.cl{width:10%;text-align:right}.ch{width:10%;text-align:right}.cp{width:17%}.cd{width:6%;text-align:center}.cno{width:auto}
+.b-sum{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:1.5rem}
+.b-card{background:var(--bg2);border-radius:6px;padding:14px 16px;border:1px solid var(--border)}
+.b-card-l{font-size:10px;font-weight:300;color:var(--muted);margin-bottom:5px}
+.b-card-v{font-size:17px;font-weight:600;color:var(--mid)}
+.b-card-s{font-size:9.5px;font-weight:300;color:var(--muted);margin-top:2px}
+
+/* FOOTER */
+footer{background:var(--dk);padding:48px 36px;border-top:1px solid rgba(255,255,255,.06)}
+.foot-in{max-width:1240px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.foot-logo{display:flex;align-items:center;gap:10px;font-size:13px;color:var(--lg)}
+.foot-logo img{height:24px;opacity:.8}
+.foot-tag{font-family:'DM Mono',monospace;font-size:10px;color:var(--mg);letter-spacing:.12em;text-transform:uppercase}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <button data-sec="hero" onclick="navTo('hero')">Top</button>
+  <button data-sec="tl-sec" onclick="navTo('tl-sec')">Timeline</button>
+  <button data-sec="osc-sec" onclick="navTo('osc-sec')">Oscar Calendar</button>
+  <button data-sec="bud-sec" onclick="navTo('bud-sec')">Budget</button>
+  <button class="nav-cta" onclick="window.location.href='mailto:mark@tropoly.io'">Contact Us</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+  <div class="grid-ov"></div>
+
+  <div class="hero-badge">
+    <img src="https://res.cloudinary.com/ded9cb1wd/image/upload/v1772560400/Tropoly-Logo-Shaded-White_zju5ox.png" alt="Tropoly">
+    <div class="badge-sep"></div>
+    <span>Jorge Maldonado</span>
+  </div>
+
+  <h1>Swan Documentary<br><em>Oscar Campaign Timeline</em></h1>
+
+  <p class="hero-sub">A 21-month strategic marketing campaign from pre-production through Tribeca premiere, festival circuit, FYC trade campaign, and the 99th Academy Awards — every workstream, milestone, and budget line mapped and managed by Tropoly.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="stat-val">$950<span class="hl">K</span></div><div class="stat-lbl">Production Budget</div></div>
+    <div class="stat"><div class="stat-val">$500<span class="hl">K</span></div><div class="stat-lbl">Marketing Budget</div></div>
+    <div class="stat"><div class="stat-val"><span class="hl">21</span></div><div class="stat-lbl">Month Campaign</div></div>
+    <div class="stat"><div class="stat-val"><span class="hl">Oscar</span></div><div class="stat-lbl">Qualifying Run Goal</div></div>
+    <div class="stat"><div class="stat-val">$8<span class="hl">K</span>+</div><div class="stat-lbl">Monthly Retainer</div></div>
+  </div>
+
+  <div class="hero-btns">
+    <a class="btn-p" href="#tl-sec" onclick="event.preventDefault();navTo('tl-sec')">View Timeline →</a>
+    <a class="btn-o" href="#bud-sec" onclick="event.preventDefault();navTo('bud-sec')">See Budget</a>
+  </div>
+
+  <div class="scroll-hint"><span>Scroll</span><div class="scroll-arrow">↓</div></div>
+</section>
+
+<!-- TIMELINE -->
+<div class="divider"></div>
+<section id="tl-sec" class="tl-wrap">
+  <div class="tl-hdr fade">
+    <div class="tl-eye">Tropoly × WFG — Swan Documentary</div>
+    <div class="tl-h">Production & Marketing Timeline</div>
+    <div class="tl-s">Apr 2026 – Dec 2027 &nbsp;·&nbsp; 9 streams &nbsp;·&nbsp; Oscar qualifying run 2027</div>
+  </div>
+  <div class="tabs-row">
+    <span class="tabs-lbl">View</span>
+    <button class="tab on" onclick="setPhase('all',this)">All phases</button>
+    <button class="tab" onclick="setPhase(0,this)">Phase 1 · Foundation</button>
+    <button class="tab" onclick="setPhase(1,this)">Phase 2 · Production</button>
+    <button class="tab" onclick="setPhase(2,this)">Phase 3 · Launch & FYC</button>
+    <span class="edit-hint-tl" style="margin-left:auto">Click any <span>stream label</span> to edit</span>
+  </div>
+  <div class="legend-row">
+    <div class="leg"><div class="lp" style="background:#DBEAFE"></div>Active</div>
+    <div class="leg"><div class="lp" style="background:var(--blue)"></div>Launch</div>
+    <div class="leg"><div class="lp" style="background:var(--bg3)"></div>Ongoing</div>
+    <div class="leg"><div class="ld"></div>Milestone</div>
+  </div>
+  <div class="gw"><table class="tlt" id="tl"></table></div>
+</section>
+
+<!-- OSCAR -->
+<div class="divider"></div>
+<section id="osc-sec" class="sec-dark">
+  <div class="inner">
+    <div class="sec-head fade">
+      <div class="sec-eyebrow">Oscar strategy</div>
+      <h2 class="sec-h">Oscar Milestones Calendar</h2>
+      <p class="sec-sub">Production, marketing, and Oscar/festival activities mapped month-by-month — Apr 2026 through the 99th Academy Awards.</p>
+    </div>
+    <div id="osc"></div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<div class="divider"></div>
+<section id="bud-sec" class="sec-light">
+  <div class="inner" style="padding-top:60px">
+    <div class="sec-head fade">
+      <div class="sec-eyebrow" style="color:var(--tl)">Marketing investment</div>
+      <h2 class="sec-h" style="color:var(--mid)">Marketing & Campaign Budget</h2>
+      <p class="sec-sub" style="color:var(--muted)">Click any number to edit — subtotals and grand total update automatically.</p>
+    </div>
+    <div class="b-note"><strong>Scope note:</strong> This budget covers Tropoly's marketing and communications scope only. Production costs, legal, insurance, tax credits, and distribution fees are managed separately by the production team.</div>
+    <div id="budget"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-in">
+    <div class="foot-logo">
+      <img src="https://res.cloudinary.com/ded9cb1wd/image/upload/v1772560400/Tropoly-Logo-Shaded-White_zju5ox.png" alt="Tropoly">
+      <span>× Jorge Maldonado</span>
+    </div>
+    <div class="foot-tag">OUTSMART. OUTPACE. OUTGROW.</div>
+    <div style="font-size:12px;color:var(--mg)">mark@tropoly.io &nbsp;·&nbsp; neel@tropoly.io</div>
+  </div>
+</footer>
+
+<!-- PANEL -->
+<div class="pov" id="pov" onclick="closePanel()"></div>
+<div class="pan" id="pan">
+  <div class="pan-hd">
+    <div class="pan-ti" id="pan-ti">Edit stream</div>
+    <div class="pan-su" id="pan-su"></div>
+    <button class="pan-cl" onclick="closePanel()">✕</button>
+  </div>
+  <div class="pan-bd">
+    <div class="ov-note"><strong>Overlapping tasks are supported.</strong> Multiple tasks covering the same months stack as separate pills in the calendar.</div>
+    <div class="tl-list" id="tl-list"></div>
+    <button class="add-btn" onclick="addTask()">+ Add new task</button>
+  </div>
+  <div class="pan-ft">
+    <button class="pc-btn" onclick="closePanel()">Cancel</button>
+    <button class="ps-btn" onclick="savePanel()">Save & update timeline</button>
+  </div>
+</div>
+
+<script>
+// NAV
+function navTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+window.addEventListener('scroll',()=>{
+  ['hero','tl-sec','osc-sec','bud-sec'].reduce((found,id)=>{
+    const el=document.getElementById(id);
+    if(el&&el.getBoundingClientRect().top<200) return id;
+    return found;
+  },'hero');
+  let active='hero';
+  ['hero','tl-sec','osc-sec','bud-sec'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el&&el.getBoundingClientRect().top<200) active=id;
+  });
+  document.querySelectorAll('nav button[data-sec]').forEach(b=>b.classList.toggle('active',b.dataset.sec===active));
+},{passive:true});
+
+// FADE OBS
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('vis');});},{threshold:.08});
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+
+// TIMELINE
+const MO=['Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const YR=[26,26,26,26,26,26,26,26,26,27,27,27,27,27,27,27,27,27,27,27,27];
+const N=21;
+const PHASES=[{r:[0,5]},{r:[6,11]},{r:[12,20]}];
+let vp=null,aSI=null,oTI=null;
+function getR(){return vp===null?[0,N-1]:PHASES[vp].r;}
+function setPhase(p,btn){vp=(p==='all')?null:p;document.querySelectorAll('.tab').forEach(b=>b.classList.remove('on'));btn.classList.add('on');render();}
+function moLbl(i){return MO[i]+" '"+(String(20+Math.floor((i+3)/12)).slice(-2));}
+
+const ST=[
+  {g:'Marketing streams',l:'Marketing plan',t:'strategy & goals',tk:[
+    {l:'Research & assumptions',s:1,e:1,tp:'a'},{l:'Model, timeline & goals',s:2,e:2,tp:'launch'},{l:'Refinements',s:3,e:4,tp:'a'},
+    {l:'Revise plan',s:13,e:13,tp:'a'},{l:'Festival strategy',s:14,e:14,tp:'a'},{l:'Festival circuit',s:15,e:15,tp:'a'},
+    {l:'Manage & refine',s:16,e:16,tp:'a'},{l:'Oscar submission plan',s:17,e:17,tp:'a'},{l:'FYC campaign active',s:18,e:19,tp:'a'},{l:'Award season wrap',s:20,e:20,tp:'a'},
+  ]},
+  {g:'Marketing streams',l:'Marketing budget',t:'management & reporting',tk:[
+    {l:'Cost assumptions & KPIs',s:0,e:0,tp:'a'},{l:'Budget finalization',s:1,e:1,tp:'launch'},{l:'Mgmt & refinements',s:2,e:7,tp:'b'},{l:'Mgmt & reporting',s:8,e:20,tp:'b'},
+  ]},
+  {g:'Marketing streams',l:'Branding',t:'identity & assets',tk:[
+    {l:'Research & story positioning',s:0,e:0,tp:'a'},{l:'Naming & messaging',s:1,e:1,tp:'a'},{l:'Logo + visual identity',s:2,e:2,tp:'launch'},{l:'Core branding assets',s:3,e:3,tp:'a'},{l:'Content assets',s:4,e:20,tp:'b'},
+  ]},
+  {g:'Marketing streams',l:'Website + materials',t:'build & management',tk:[
+    {l:'Secure URL',s:1,e:1,tp:'a'},{l:'Web copy & SEO',s:2,e:2,tp:'a'},{l:'Design, build, launch',s:3,e:3,tp:'launch'},{l:'Refine, manage',s:4,e:7,tp:'b'},
+    {l:'Prep Q1 campaign',s:8,e:8,tp:'a'},{l:'Launch: events & ticketing',s:9,e:9,tp:'launch'},{l:'Manage, refine',s:10,e:12,tp:'b'},
+    {l:'Update: film complete',s:13,e:13,tp:'a'},{l:'Update: Tribeca premiere',s:14,e:14,tp:'a'},{l:'Festival circuit updates',s:15,e:15,tp:'a'},
+    {l:'Manage, refine',s:16,e:16,tp:'b'},{l:'Prep FYC + Screening Room',s:17,e:17,tp:'launch'},{l:'FYC site live',s:18,e:18,tp:'launch'},{l:'Manage, refine',s:19,e:19,tp:'b'},{l:'Year-end wrap',s:20,e:20,tp:'a'},
+  ]},
+  {g:'Campaign execution',l:'Marketing campaign',t:'execution & reporting',tk:[
+    {l:'Social handles + shotlists',s:1,e:1,tp:'a'},{l:'CRM, lists, content calendar',s:2,e:2,tp:'a'},{l:'Channels setup + tracking',s:3,e:3,tp:'a'},
+    {l:'Launch teaser trailer',s:4,e:4,tp:'launch'},{l:'Manage + report',s:5,e:7,tp:'b'},{l:'Prep Q1 campaign',s:8,e:8,tp:'a'},
+    {l:'Launch Oscar run campaign',s:9,e:9,tp:'launch'},{l:'Manage + report',s:10,e:12,tp:'b'},{l:'Full trailer release + PR',s:13,e:13,tp:'launch'},
+    {l:'Festival premiere push',s:14,e:14,tp:'a'},{l:'Festival circuit',s:15,e:15,tp:'a'},{l:'Manage + report',s:16,e:16,tp:'b'},
+    {l:'FYC preparation',s:17,e:17,tp:'a'},{l:'FYC launch — trades + screeners',s:18,e:18,tp:'launch'},{l:'FYC active + Q&A screenings',s:19,e:19,tp:'a'},{l:'Award season push',s:20,e:20,tp:'a'},
+  ]},
+  {g:'Campaign execution',l:'WFG campaign',t:'agent network',tk:[
+    {l:'Agent distribution calendar',s:2,e:2,tp:'a'},{l:'Agent kits + video assets',s:3,e:3,tp:'a'},{l:'Teaser trailer to WFG',s:4,e:4,tp:'launch'},
+    {l:'Manage, refine',s:5,e:7,tp:'b'},{l:'Prep Q1 campaign',s:8,e:8,tp:'a'},{l:'Oscar run to agent network',s:9,e:9,tp:'launch'},
+    {l:'Manage, refine',s:10,e:12,tp:'b'},{l:'Full trailer to network',s:13,e:13,tp:'launch'},{l:'Festival announcement',s:14,e:14,tp:'a'},
+    {l:'Manage, refine',s:15,e:16,tp:'b'},{l:'Prep Oscar agent kits',s:17,e:17,tp:'a'},{l:'Agent kit launch + events',s:18,e:18,tp:'launch'},
+    {l:'Manage, refine',s:19,e:19,tp:'b'},{l:'Year-end + nominations push',s:20,e:20,tp:'a'},
+  ]},
+  {g:'Campaign execution',l:'Press & media',t:'PR & outreach',tk:[
+    {l:'Identify key journalists',s:0,e:0,tp:'a'},{l:'Build media list',s:1,e:1,tp:'a'},{l:'Initial outreach',s:2,e:2,tp:'a'},{l:'Story positioning',s:3,e:3,tp:'a'},
+    {l:'BTS features',s:4,e:4,tp:'a'},{l:'Ongoing pitching',s:5,e:7,tp:'b'},{l:'Pre-festival prep',s:8,e:8,tp:'a'},{l:'Oscar story angles',s:9,e:9,tp:'a'},
+    {l:'Awards coverage',s:10,e:12,tp:'b'},{l:'Film complete — media blitz',s:13,e:13,tp:'launch'},{l:'Festival premiere coverage',s:14,e:14,tp:'a'},
+    {l:'Festival circuit mgmt',s:15,e:15,tp:'a'},{l:'Build Oscar narrative',s:16,e:16,tp:'a'},{l:'FYC press push',s:17,e:17,tp:'a'},
+    {l:'FYC — doc branch outreach',s:18,e:18,tp:'launch'},{l:'Shortlist press push',s:19,e:19,tp:'a'},{l:'Awards final push',s:20,e:20,tp:'a'},
+  ]},
+  {g:'Production',l:'BTS & content',t:'capture & edit',tk:[
+    {l:'Content strategy & shotlist',s:0,e:0,tp:'a'},{l:'Shotlist finalize',s:1,e:1,tp:'a'},{l:'Pre-shoot planning',s:2,e:2,tp:'a'},
+    {l:'Interview shoot — San Jose',s:3,e:3,tp:'launch'},{l:'BTS edit + social rollout',s:4,e:5,tp:'a'},{l:'USA recreations BTS',s:6,e:6,tp:'launch'},
+    {l:'BTS edit + rollout',s:7,e:7,tp:'a'},{l:'Vietnam shoot BTS',s:8,e:8,tp:'launch'},{l:'Vietnam BTS edit + rollout',s:9,e:9,tp:'a'},
+    {l:'Post-production BTS',s:10,e:12,tp:'b'},{l:'Film complete — deliverables',s:13,e:13,tp:'launch'},{l:'Festival premiere docs',s:14,e:14,tp:'a'},
+    {l:'Festival circuit content',s:15,e:15,tp:'a'},{l:'Award season content',s:16,e:16,tp:'a'},{l:'FYC content assets',s:17,e:17,tp:'a'},
+    {l:'FYC active',s:18,e:18,tp:'b'},{l:'Ongoing',s:19,e:20,tp:'b'},
+  ]},
+  {g:'Production',l:'Festival strategy',t:'submissions & premieres',tk:[
+    {l:'Research qualifying festivals',s:0,e:0,tp:'a'},{l:'Festival strategy plan',s:1,e:1,tp:'a'},{l:'Identify Tribeca deadlines',s:2,e:2,tp:'a'},
+    {l:'Rough cut WIP prep',s:3,e:3,tp:'a'},{l:'Confirm VIFF 2027 strategy',s:6,e:6,tp:'a'},{l:'Tribeca submission window',s:7,e:7,tp:'a'},
+    {l:'VIFF submission window',s:8,e:8,tp:'a'},{l:'Festivals confirmed',s:9,e:9,tp:'a'},{l:'Pre-festival prep',s:10,e:12,tp:'b'},
+    {l:'Tribeca premiere (Est. Jun)',s:13,e:13,tp:'launch'},{l:'Post-Tribeca circuit',s:14,e:14,tp:'a'},{l:'VIFF 2027 (Est. Oct)',s:15,e:15,tp:'launch'},
+    {l:'Additional festival runs',s:16,e:16,tp:'a'},{l:'Qualifying run if needed',s:17,e:17,tp:'a'},
+  ]},
+];
+const MS=[null,'Budget & plan finalized','Branding complete','Website v1 live','Teaser trailer launch',null,null,'USA recreations',null,'Vietnam shoot','Oscar run launch',null,null,'Film complete','Tribeca premiere',null,'VIFF premiere',null,'FYC launch','Shortlist','Nominations announced'];
+const PROD=[null,null,null,'San Jose interviews',null,null,'USA Recreations shoot','Vietnam shoot','Post-production begins',null,null,null,null,'Film complete',null,null,null,null,null,null,null];
+const EVT=[null,null,null,null,null,null,null,null,null,null,null,null,'Tribeca 2027 (Est. Jun)',null,'VIFF 2027 (Est. Oct)',null,'Qualifying run if needed','LA FYC screenings','NY FYC screenings',null,null];
+
+function cellMap(tasks){
+  const c=Array.from({length:N},()=>[]);
+  tasks.forEach(t=>{for(let i=Math.max(0,t.s);i<=Math.min(N-1,t.e);i++) c[i].push({l:t.l,tp:t.tp});});
+  return c;
+}
+
+function render(){
+  const [s,e]=getR();const tl=document.getElementById('tl');let h='<thead><tr>';
+  h+='<th class="lc yh" style="background:var(--bg2);border-right:1px solid var(--border-mid);text-align:left;padding-left:12px">Stream</th>';
+  let cy=null,cs=0,spans=[];
+  for(let i=s;i<=e;i++){if(YR[i]!==cy){if(cy!==null)spans.push({y:cy,sp:i-cs});cy=YR[i];cs=i;}}
+  spans.push({y:cy,sp:e-cs+1});
+  for(const{y,sp}of spans) h+='<th colspan="'+sp+'" class="yh'+(y===27?' y27':'')+'">20'+y+'</th>';
+  h+='</tr><tr><th class="lc mh" style="background:var(--bg2);border-right:1px solid var(--border-mid)"></th>';
+  for(let i=s;i<=e;i++) h+='<th class="mh'+(YR[i]===27?' y27':'')+'">'+MO[i]+'</th>';
+  h+='</tr></thead><tbody>';
+  let lg=null;
+  ST.forEach((st,si)=>{
+    if(st.g!==lg){
+      h+='<tr class="grp-h"><td class="lc"><div style="border-right:1px solid var(--border-mid);height:100%"><span class="grp-n">'+st.g+'</span></div></td>';
+      for(let i=s;i<=e;i++) h+='<td style="background:var(--bg2);border-bottom:1px solid var(--border);height:26px"></td>';
+      h+='</tr>';lg=st.g;
+    }
+    h+='<tr><td class="lc"><div class="lc-in" onclick="openP('+si+')"><div class="lc-nm">'+st.l+'</div><div class="lc-tg">'+st.t+'</div><div class="ei">✎ edit tasks</div></div></td>';
+    const cm=cellMap(st.tk);let i=s;
+    while(i<=e){
+      const cur=cm[i];const is27=YR[i]===27;
+      if(!cur.length){let j=i+1;while(j<=e&&!cm[j].length)j++;h+='<td colspan="'+(j-i)+'" class="dc empty'+(is27?' y27':'')+'"></td>';i=j;continue;}
+      const sig=JSON.stringify(cur);let j=i+1;
+      while(j<=e&&JSON.stringify(cm[j])===sig)j++;
+      h+='<td colspan="'+(j-i)+'" class="mg'+(is27?' y27':'')+'"><div class="ps">'+cur.map(p=>'<span class="pill '+p.tp+'">'+p.l+'</span>').join('')+'</div></td>';
+      i=j;
+    }
+    h+='</tr>';
+  });
+  h+='<tr class="ms-row"><td class="lc ms-row"><div class="ms-lc"><div class="ms-t">Milestones</div><div class="ms-s">key checkpoints</div></div></td>';
+  for(let i=s;i<=e;i++){const v=MS[i];h+='<td class="ms-c'+(v?'':' emp')+'">'+(v?'<div class="dw"><div class="dsq"></div><div class="dlb">'+v+'</div></div>':'')+'</td>';}
+  h+='</tr><tr class="sr"><td class="lc sr"><div class="sr-lc"><div class="sr-lb">Production</div></div></td>';
+  for(let i=s;i<=e;i++){const v=PROD[i];h+='<td class="sr-c'+(v?' hp':'')+'"><div class="sr-tx">'+(v||'')+'</div></td>';}
+  h+='</tr><tr class="sr"><td class="lc sr"><div class="sr-lc"><div class="sr-lb">Events</div></div></td>';
+  for(let i=s;i<=e;i++){const v=EVT[i];h+='<td class="sr-c'+(v?' he':'')+'"><div class="sr-tx e">'+(v||'')+'</div></td>';}
+  h+='</tr></tbody>';
+  tl.innerHTML=h;
+}
+
+// PANEL
+let pTasks=[];
+function openP(si){aSI=si;const st=ST[si];document.getElementById('pan-ti').textContent=st.l;document.getElementById('pan-su').textContent=st.t;pTasks=st.tk.map(t=>({...t}));oTI=null;renderPT();document.getElementById('pov').classList.add('open');document.getElementById('pan').classList.add('open');}
+function closePanel(){document.getElementById('pov').classList.remove('open');document.getElementById('pan').classList.remove('open');}
+function savePanel(){ST[aSI].tk=pTasks.map(t=>({...t}));render();closePanel();}
+function toggleTI(ti){oTI=(oTI===ti)?null:ti;renderPT();}
+function renderPT(){
+  const list=document.getElementById('tl-list');
+  if(!pTasks.length){list.innerHTML='<div style="font-size:11px;color:var(--muted);font-style:italic;padding:12px 0">No tasks yet.</div>';return;}
+  list.innerHTML=pTasks.map((t,ti)=>{
+    const open=oTI===ti;
+    const rng=t.s===t.e?moLbl(t.s):(moLbl(t.s)+' → '+moLbl(t.e));
+    const msS=MO.map((m,i)=>'<option value="'+i+'"'+(i===t.s?' selected':'')+'>'+moLbl(i)+'</option>').join('');
+    const msE=MO.map((m,i)=>'<option value="'+i+'"'+(i===t.e?' selected':'')+'>'+moLbl(i)+'</option>').join('');
+    return '<div class="ti"><div class="ti-hd" onclick="toggleTI('+ti+')"><div><div class="ti-nm">'+(t.l||'Untitled')+'</div><div class="ti-mt">'+rng+'</div></div><div class="ti-r"><span class="tp '+t.tp+'">'+(t.tp==='launch'?'Launch':t.tp==='b'?'Ongoing':'Active')+'</span><span class="tc'+(open?' open':'')+'">▾</span></div></div>'+
+      '<div class="ti-bd'+(open?' open':'')+'">'+
+      '<div class="fr full" style="margin-bottom:10px"><div><div class="fl">Task label</div><input class="fi" value="'+t.l+'" oninput="pTasks['+ti+'].l=this.value" placeholder="Task label"></div></div>'+
+      '<div class="fr" style="margin-bottom:10px"><div><div class="fl">Start month</div><select class="fi" onchange="pTasks['+ti+'].s=+this.value;if(pTasks['+ti+'].e<pTasks['+ti+'].s)pTasks['+ti+'].e=pTasks['+ti+'].s;renderPT()">'+msS+'</select></div>'+
+      '<div><div class="fl">End month</div><select class="fi" onchange="pTasks['+ti+'].e=+this.value;if(pTasks['+ti+'].e<pTasks['+ti+'].s)pTasks['+ti+'].e=pTasks['+ti+'].s;renderPT()">'+msE+'</select></div></div>'+
+      '<div><div class="fl">Style</div><div class="ty-row"><button class="ty-btn'+(t.tp==='a'?' sa':'')+'" onclick="pTasks['+ti+'].tp=\'a\';renderPT()">Active</button><button class="ty-btn'+(t.tp==='launch'?' sl':'')+'" onclick="pTasks['+ti+'].tp=\'launch\';renderPT()">Launch</button><button class="ty-btn'+(t.tp==='b'?' sb':'')+'" onclick="pTasks['+ti+'].tp=\'b\';renderPT()">Ongoing</button></div></div>'+
+      '<div class="ti-act"><button class="del-btn" onclick="delT('+ti+')">Delete task</button></div>'+
+      '</div></div>';
+  }).join('');
+}
+function delT(ti){pTasks.splice(ti,1);oTI=null;renderPT();}
+function addTask(){
+  const last=pTasks[pTasks.length-1];const s=last?Math.min(last.e,N-1):0;
+  pTasks.push({l:'New task',s,e:s,tp:'a'});oTI=pTasks.length-1;renderPT();
+  setTimeout(()=>document.getElementById('tl-list').lastElementChild.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
+}
+
+// OSCAR
+const OSC=[
+  {ph:'Phase 1 · Pre-production & foundation  |  Apr – Sep 2026',rows:[
+    {p:'Apr 2026',pr:'Story edit & narrative arc begins',mk:'Research & assumptions\nKick-off with team',os:'Research qualifying festivals\nIdentify Oscar eligibility requirements',fl:'Project kick-off'},
+    {p:'May 2026',pr:'San Jose interviews (end of May)\nBTS capture begins',mk:'Budget & plan finalized\nSocial handles secured',os:'Festival strategy drafted\nTribeca 2027 deadlines research',fl:'Budget & plan finalized'},
+    {p:'Jun 2026',pr:'Narrative arc refinements',mk:'Logo + visual identity\nCRM, lists, content calendar',os:'Research comparable documentary campaigns',fl:'Branding complete'},
+    {p:'Jul 2026',pr:'USA Recreations pre-production',mk:'Website v1 launch\nSocial channels setup',os:'Tribeca + VIFF 2027 strategy confirmed',fl:'Website v1 live'},
+    {p:'Aug 2026',pr:'USA shoot logistics',mk:'Teaser trailer campaign launch\nAds setup + BTS rollout',os:'Press list building begins\nInitial media outreach',fl:'Teaser trailer launch'},
+    {p:'Sep 2026',pr:'USA Recreations shoot (end of Sep)',mk:'Campaign management & reporting',os:'Tribeca 2027 submission window opens',fl:'USA shoot complete'},
+  ]},
+  {ph:'Phase 2 · Production & campaign build  |  Oct 2026 – Mar 2027',rows:[
+    {p:'Oct 2026',pr:'Post-USA edit begins',mk:'Campaign management & reporting',os:'Tribeca 2027 early submission deadline\nVIFF 2027 submission window opens',fl:'Festival submissions'},
+    {p:'Nov 2026',pr:'Vietnam shoot\nBTS capture + community content',mk:'Vietnam influencer outreach',os:'VIFF 2027 submission deadline\nVietnam media partnerships confirmed',fl:'Vietnam shoot complete'},
+    {p:'Dec 2026',pr:'Post-production begins\nEditor, colorist & composer engaged',mk:'Prep Q1 Oscar run campaign',os:'Oscar run strategy finalized\nFYC budget approved',fl:'Post-production begins'},
+    {p:'Jan 2027',pr:'Post-production active\nRough cut screenings',mk:'Oscar run campaign launch\nUpdated site + agent kit launch',os:'Trade press outreach begins\nAcademy Doc Branch introductions',fl:'Oscar run launch'},
+    {p:'Feb 2027',pr:'Fine cut & sound mix',mk:'Campaign management & reporting',os:'Festival PR strategy finalized\nCritic relationships deepened',fl:null},
+    {p:'Mar 2027',pr:'VFX & color grading',mk:'Build momentum toward film completion',os:'Festival submission confirmations',fl:null},
+  ]},
+  {ph:'Phase 3 · Post-production & launch  |  Apr – Oct 2027',rows:[
+    {p:'Apr 2027',pr:'Final sound mix & mastering',mk:'Revise plan for film completion',os:'DCP preparation begins\nTribeca programmer contact',fl:null},
+    {p:'May 2027',pr:'Film complete\nDCP delivered · E&O secured',mk:'Full trailer release\nFull PR media blitz',os:'Academy early submission (~Aug)',fl:'Film complete'},
+    {p:'Jun 2027',pr:'Film archived\nBTS footage finalized',mk:'Tribeca premiere — press & PR push',os:'Tribeca Film Festival premiere\nOscar qualifying award opportunity',fl:'Tribeca premiere'},
+    {p:'Jul 2027',pr:'Archive management',mk:'Post-Tribeca campaign',os:'Festival circuit\nDistribution strategy conversations',fl:null},
+    {p:'Aug 2027',pr:'—',mk:'FYC prep\nOscar trade ad strategy',os:'Academy early submission deadline\nScreening Room listing confirmed',fl:'Academy submission'},
+    {p:'Sep 2027',pr:'—',mk:'Oscar narrative building\nFYC brief finalized',os:'VIFF premiere (Est. Oct 2027)',fl:'VIFF premiere'},
+    {p:'Oct 2027',pr:'—',mk:'Trade ads designed & approved',os:'Academy final submission deadline\nQualifying theatrical run if needed',fl:'Final submission deadline'},
+  ]},
+  {ph:'Phase 4 · FYC campaign & Oscar run  |  Nov 2027 – Mar 2028',rows:[
+    {p:'Nov 2027',pr:'—',mk:'FYC campaign launch\nTrade ads — Deadline, THR, Variety\nQ&A screenings LA & NY',os:'FYC active — Doc Branch screeners live\nAcademy Screening Room active',fl:'FYC launch'},
+    {p:'Dec 2027',pr:'—',mk:'FYC active & optimizing',os:'Documentary shortlist announced\nAmplify across all channels',fl:'Shortlist'},
+    {p:'Jan 2028',pr:'—',mk:'Nominations push — final FYC wave\nQ&A tour: LA, NY, SF',os:'Nominations announced\nPR machine in full swing',fl:'Nominations announced'},
+    {p:'Feb 2028',pr:'—',mk:'Final campaign push\nVoter screening events',os:'FYC final wave — all channels\nCeremony prep',fl:'Final voter push'},
+    {p:'Mar 2028',pr:'—',mk:'Ceremony support\nPost-ceremony press strategy',os:'99th Academy Awards ceremony\nPost-ceremony distribution talks',fl:'Ceremony'},
+  ]},
+];
+function buildOsc(){
+  const c=document.getElementById('osc');let h='';
+  OSC.forEach(ph=>{
+    h+='<div class="osc-ph fade">'+ph.ph+'</div><table class="oct fade">';
+    h+='<tr><td class="oc-per och">Period</td><td class="oc-pr och">Production</td><td class="oc-mk och" style="color:var(--tlL)">Marketing</td><td class="oc-os och" style="color:#BFD0F5">Oscar / festival</td><td class="oc-fl och" style="color:var(--tlL)">Key milestone</td></tr>';
+    ph.rows.forEach(r=>{
+      h+='<tr><td class="oc-per">'+r.p+'</td><td class="oc-pr">'+r.pr.replace(/\n/g,'<br>')+'</td><td class="oc-mk">'+r.mk.replace(/\n/g,'<br>')+'</td><td class="oc-os">'+r.os.replace(/\n/g,'<br>')+'</td><td class="oc-fl">'+(r.fl?'<span class="flt">'+r.fl+'</span>':'<span class="fle">—</span>')+'</td></tr>';
+    });
+    h+='</table>';
+  });
+  c.innerHTML=h;
+  document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+}
+
+// BUDGET
+const BD={s:[
+  {t:'Tropoly retainer fees',r:[
+    {n:'Core team retainer',sc:'Strategy, account management, creative direction, reporting & planning.',lo:8000,hi:10000,ph:'All phases (Apr 2026–Dec 2027)',du:'21 mo',no:'Base retainer — flat monthly fee.'},
+    {n:'GTM team add-on',sc:'Go-to-market specialists for campaign scope expansion.',lo:2000,hi:4000,ph:'Phase 2 onward (Jun 2026+)',du:'18 mo',no:'Layered on as workload increases toward campaign launch.'},
+    {n:'Campaign execution team add-on',sc:'Paid social managers, email execution, ad ops, A/B testing.',lo:3000,hi:6000,ph:'Campaign active (Aug 2026–Dec 2027)',du:'17 mo',no:'Activated at teaser trailer launch.'},
+    {n:'Web management team add-on',sc:'Ongoing website updates, SEO, ticketing integrations.',lo:1500,hi:2500,ph:'Website live (Jul 2026–Dec 2027)',du:'18 mo',no:'Spikes for major updates (Oscar run, premiere events).'},
+    {n:'FYC campaign specialist add-on',sc:'Oscar/awards specialist with Academy relationships.',lo:6000,hi:9500,ph:'FYC phase (Oct–Dec 2027)',du:'3 mo',no:'Short-term engagement timed to the FYC window.'},
+    {n:'Vietnamese / international outreach',sc:'Cultural liaison, translation, Vietnamese influencer management.',lo:1000,hi:2500,ph:'Nov 2026–Jun 2027',du:'8 mo',no:'Supports Vietnamese diaspora engagement.'},
+  ]},
+  {t:'Content production',r:[
+    {n:'Teaser trailer production',sc:'Professional edit, colour grade, sound mix.',lo:5000,hi:15000,ph:'Jul 2026 (one-time)',du:'—',no:'Scope depends on existing footage vs. new shoot days.'},
+    {n:'Full theatrical trailer',sc:'Full-length trailer (2–2.5 min) for Oscar run.',lo:8000,hi:20000,ph:'Apr–May 2027 (one-time)',du:'—',no:'Requires film to be substantially complete.'},
+    {n:'BTS & social content packages',sc:'Shoot-day BTS capture, editing, short-form social cuts.',lo:500,hi:1500,ph:'Shoot phases (May–Nov 2026)',du:'7 mo',no:'Ongoing during San Jose, USA Recreations, and Vietnam shoots.'},
+    {n:'Photography & key art',sc:'Documentary poster, promotional stills, social imagery.',lo:3000,hi:8000,ph:'Jun–Jul 2026 (one-time)',du:'—',no:'Key art is foundational to all campaign assets.'},
+    {n:'EPK (electronic press kit)',sc:'Film synopsis, director statement, talent bios, press stills.',lo:2000,hi:5000,ph:'May 2027 (one-time)',du:'—',no:'Required for festival submissions and press outreach.'},
+  ]},
+  {t:'Digital & paid media spend',r:[
+    {n:'Paid social (Meta / Instagram / TikTok)',sc:'Audience building, trailer promotion, event awareness.',lo:2000,hi:5000,ph:'Campaign active (Aug 2026–Dec 2027)',du:'17 mo',no:'Scales up around major launches.'},
+    {n:'YouTube pre-roll / connected TV',sc:'Trailer distribution targeting documentary and film audiences.',lo:500,hi:2000,ph:'Trailer release phases',du:'6 mo',no:'CTV effective for documentary audiences.'},
+    {n:'Google display / search',sc:'Film title brand protection, search ads for screenings.',lo:300,hi:1000,ph:'Campaign active',du:'12 mo',no:'Supports direct ticket/event conversions.'},
+    {n:'Trade publication ads (Deadline / THR / Variety)',sc:'FYC print and digital ads targeting Academy members.',lo:15000,hi:40000,ph:'FYC phase Oct–Dec 2027 (one-time)',du:'—',no:'A full FYC trade campaign is industry standard.'},
+    {n:'Billboard / OOH — FYC (LA / NY)',sc:'Out-of-home on Sunset Strip / WeHo during FYC window.',lo:10000,hi:30000,ph:'FYC phase Nov 2027 (one-time)',du:'—',no:'Optional depending on budget.'},
+  ]},
+  {t:'PR & press relations',r:[
+    {n:'Documentary press & media relations',sc:'Outreach to IndieWire, Documentary Magazine, THR, Variety.',lo:1000,hi:2500,ph:'Campaign active (Aug 2026–Dec 2027)',du:'17 mo',no:'Specialist publicist may be engaged at premiere phase.'},
+    {n:'Festival premiere PR push',sc:'Press junket coordination at Tribeca and VIFF.',lo:3000,hi:8000,ph:'Jun 2027 + Oct 2027 (one-time each)',du:'—',no:'Per premiere. Includes travel, press materials.'},
+    {n:'Awards season / FYC PR',sc:'Awards publicist managing Academy member outreach, Q&A events.',lo:10000,hi:25000,ph:'FYC phase Oct–Dec 2027 (one-time)',du:'—',no:'Covers external PR execution during FYC window.'},
+    {n:'Critic & screening invitations',sc:'Screener distribution, event logistics for LA/NY Q&A screenings.',lo:500,hi:1500,ph:'Festival + FYC phase',du:'6 mo',no:'Includes coordination for LA/NY Q&A screenings.'},
+  ]},
+  {t:'Events & activations',r:[
+    {n:'WFG network agent events',sc:'Internal WFG preview screenings, agent kit distribution events.',lo:500,hi:2000,ph:'Aug 2026 onward',du:'12 mo',no:"Leverages WFG's ~50,000 agent network."},
+    {n:'LA / NY FYC screening events',sc:'Academy member Q&A screenings. Venue rental, catering.',lo:5000,hi:15000,ph:'Oct–Dec 2027 (one-time)',du:'—',no:'2–4 events recommended.'},
+    {n:'Qualifying theatrical run',sc:'7-day minimum run in qualifying US metro area.',lo:5000,hi:20000,ph:'2027 if festival route insufficient',du:'—',no:'Only required if film does not qualify via festival award win.'},
+    {n:'Festival submission fees',sc:'Tribeca 2027, VIFF 2027, and additional qualifying festival submissions.',lo:2000,hi:6000,ph:'Oct 2026–Jun 2027',du:'—',no:'Estimated for 5–8 submissions.'},
+  ]},
+  {t:'Technology, tools & platforms',r:[
+    {n:'CRM & email platform',sc:'CRM setup and subscription. List management, email campaigns.',lo:100,hi:300,ph:'Setup Jun 2026 onward',du:'19 mo',no:'May use existing Tropoly toolstack.'},
+    {n:'Website hosting & domain',sc:'Domain registration, hosting, SSL, Vercel deployment.',lo:50,hi:150,ph:'Jul 2026 onward',du:'18 mo',no:'Initial build covered in retainer scope.'},
+    {n:'Social scheduling & analytics',sc:'Scheduling tools, social listening, analytics dashboards.',lo:100,hi:300,ph:'Aug 2026 onward',du:'17 mo',no:'May be covered by existing Tropoly toolstack.'},
+    {n:'Academy Screening Room listing',sc:'Upload to Academy Screening Room for Documentary Branch FYC viewing.',lo:0,hi:0,ph:'Oct 2027 (one-time)',du:'—',no:'No fee for Documentary Feature category.'},
+  ]},
+]};
+function fmt(n){if(!n||n===0)return'—';return'$'+Number(n).toLocaleString();}
+function pNum(s){return parseInt(String(s).replace(/[^0-9]/g,''))||0;}
+function calcSt(r,c){return r.reduce((s,x)=>s+(x[c]||0),0);}
+function calcGr(c){return BD.s.reduce((s,sec)=>s+calcSt(sec.r,c),0);}
+function onEd(el,si,ri,col){BD.s[si].r[ri][col]=pNum(el.textContent);refTot();}
+function onBl(el,si,ri,col){const v=BD.s[si].r[ri][col];el.textContent=v?v.toLocaleString():'';}
+function refTot(){
+  BD.s.forEach((sec,si)=>{
+    const el=document.getElementById('st-'+si+'-l'),eh=document.getElementById('st-'+si+'-h');
+    if(el)el.textContent=fmt(calcSt(sec.r,'lo'));if(eh)eh.textContent=fmt(calcSt(sec.r,'hi'));
+  });
+  const gl=document.getElementById('g-l'),gh=document.getElementById('g-h');
+  if(gl)gl.textContent=fmt(calcGr('lo'));if(gh)gh.textContent=fmt(calcGr('hi'));
+}
+function buildBudget(){
+  const b=document.getElementById('budget');let h='';
+  BD.s.forEach((sec,si)=>{
+    h+='<div class="bsec fade"><div class="bsec-t">'+sec.t+'</div>';
+    h+='<table class="bt"><thead><tr><th class="cn">Line item</th><th class="cs">Scope</th><th class="cl">Low ($)</th><th class="ch">High ($)</th><th class="cp">Phase</th><th class="cd">Duration</th><th class="cno">Notes</th></tr></thead><tbody>';
+    sec.r.forEach((r,ri)=>{
+      const lv=r.lo?r.lo.toLocaleString():'';const hv=r.hi?r.hi.toLocaleString():'';
+      h+='<tr><td class="bn">'+r.n+'</td><td>'+r.sc+'</td>';
+      h+='<td style="text-align:right;padding:5px 6px"><div contenteditable="true" onblur="onBl(this,'+si+','+ri+',\'lo\')" oninput="onEd(this,'+si+','+ri+',\'lo\')">'+lv+'</div></td>';
+      h+='<td style="text-align:right;padding:5px 6px"><div contenteditable="true" onblur="onBl(this,'+si+','+ri+',\'hi\')" oninput="onEd(this,'+si+','+ri+',\'hi\')">'+hv+'</div></td>';
+      h+='<td>'+r.ph+'</td><td style="text-align:center;color:var(--muted);font-size:9.5px;font-weight:300;padding:7px 10px">'+r.du+'</td><td class="nt">'+r.no+'</td></tr>';
+    });
+    h+='<tr class="str"><td colspan="2">Subtotal — '+sec.t.toLowerCase()+'</td><td class="sv" id="st-'+si+'-l">'+fmt(calcSt(sec.r,'lo'))+'</td><td class="sv" id="st-'+si+'-h">'+fmt(calcSt(sec.r,'hi'))+'</td><td colspan="3" style="font-size:9px;color:var(--muted);font-style:italic;padding:8px 10px">Updates automatically</td></tr>';
+    h+='</tbody></table></div>';
+  });
+  h+='<table class="bt" style="margin-top:.5rem"><tbody><tr class="ttr"><td colspan="2" style="padding-left:12px;font-size:11px;font-weight:600">Total estimated budget</td><td class="gv" id="g-l">'+fmt(calcGr('lo'))+'</td><td class="gv" id="g-h">'+fmt(calcGr('hi'))+'</td><td colspan="3" style="font-size:9px;color:var(--tlL);font-style:italic;padding:10px">Recurring retainer + one-time costs combined</td></tr></tbody></table>';
+  h+='<div class="b-sum">';
+  [{l:'Core team retainer',v:'$8K–$10K',s:'per month · all 21 months'},
+   {l:'Full team (all add-ons)',v:'$13K–$22K',s:'per month at peak'},
+   {l:'FYC trade ads + OOH',v:'$25K–$70K',s:'one-time · FYC window'},
+   {l:'Festival + events',v:'$12K–$41K',s:'submissions + screenings'},
+   {l:'Recurring retainer total',v:'$168K–$295K',s:'21 months (low to high)'},
+   {l:'Total est. (recurring + one-time)',v:'$250K–$500K+',s:'full engagement'},
+  ].forEach(c=>{h+='<div class="b-card fade"><div class="b-card-l">'+c.l+'</div><div class="b-card-v">'+c.v+'</div><div class="b-card-s">'+c.s+'</div></div>';});
+  h+='</div>';
+  b.innerHTML=h;
+  document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+}
+
+render();buildOsc();buildBudget();
+</script>
+</body>
+</html>
