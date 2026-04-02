@@ -246,7 +246,7 @@ footer{background:var(--dk);padding:48px 36px;border-top:1px solid rgba(255,255,
   <button data-sec="tl-sec" onclick="navTo('tl-sec')">Timeline</button>
   <button data-sec="osc-sec" onclick="navTo('osc-sec')">Oscar Calendar</button>
   <button data-sec="bud-sec" onclick="navTo('bud-sec')">Budget</button>
-  <button class="nav-cta" onclick="window.location.href='mailto:mark@tropoly.io'">Contact Us</button>
+  <button data-sec="contact-sec" class="nav-cta" onclick="navTo('contact-sec')">Contact Us</button>
 </nav>
 
 <!-- HERO -->
@@ -335,6 +335,56 @@ footer{background:var(--dk);padding:48px 36px;border-top:1px solid rgba(255,255,
   </div>
 </section>
 
+<!-- CONTACT -->
+<div class="divider"></div>
+<section id="contact-sec" style="background:var(--dk);padding:80px 0">
+  <div class="inner">
+    <div class="fade" style="margin-bottom:48px">
+      <div class="sec-eyebrow">Your Tropoly team</div>
+      <h2 class="sec-h">Let's get started</h2>
+      <p class="sec-sub">The engagement is designed to be up and running quickly. Phase 1 begins upon signing — narrative development, positioning, and early media groundwork start in week one.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-bottom:48px">
+      <div class="fade" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px 32px">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--tlG);border:1px solid var(--tlB);display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+          <div style="font-size:18px;font-weight:700;color:var(--tlL)">MF</div>
+        </div>
+        <div style="font-size:17px;font-weight:600;color:var(--wh);margin-bottom:4px">Mark Funston</div>
+        <div style="font-size:13px;color:var(--lg);margin-bottom:16px">Partner, Marketing &amp; Infrastructure</div>
+        <a href="mailto:mark@tropoly.io" style="font-size:13px;color:var(--tlL);text-decoration:none;font-weight:500">mark@tropoly.io</a>
+      </div>
+      <div class="fade" style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:28px 32px">
+        <div style="width:48px;height:48px;border-radius:50%;background:var(--tlG);border:1px solid var(--tlB);display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+          <div style="font-size:18px;font-weight:700;color:var(--tlL)">NS</div>
+        </div>
+        <div style="font-size:17px;font-weight:600;color:var(--wh);margin-bottom:4px">Neel Singh</div>
+        <div style="font-size:13px;color:var(--lg);margin-bottom:16px">Managing Partner, Strategy &amp; Operations</div>
+        <a href="mailto:neel@tropoly.io" style="font-size:13px;color:var(--tlL);text-decoration:none;font-weight:500">neel@tropoly.io</a>
+      </div>
+      <div class="fade" style="background:linear-gradient(135deg,rgba(26,158,143,.15),rgba(26,158,143,.05));border:1px solid var(--tlB);border-radius:16px;padding:28px 32px;display:flex;flex-direction:column;justify-content:space-between">
+        <div>
+          <div style="font-size:13px;color:var(--tlL);font-weight:500;letter-spacing:.06em;text-transform:uppercase;margin-bottom:12px">Next steps</div>
+          <div style="display:flex;flex-direction:column;gap:14px">
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div style="width:24px;height:24px;border-radius:50%;background:var(--tl);color:#fff;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">1</div>
+              <div style="font-size:13px;color:var(--ow);line-height:1.5"><strong style="color:var(--wh)">Kickoff &amp; alignment</strong><br>Align on film story, audiences, release timeline, and existing materials.</div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div style="width:24px;height:24px;border-radius:50%;background:var(--tl);color:#fff;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">2</div>
+              <div style="font-size:13px;color:var(--ow);line-height:1.5"><strong style="color:var(--wh)">Contract &amp; retainer sign-off</strong><br>Formalize the engagement. Phase 1 begins upon signing.</div>
+            </div>
+            <div style="display:flex;gap:14px;align-items:flex-start">
+              <div style="width:24px;height:24px;border-radius:50%;background:var(--tl);color:#fff;font-size:11px;font-weight:600;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">3</div>
+              <div style="font-size:13px;color:var(--ow);line-height:1.5"><strong style="color:var(--wh)">Phase 1 deliverables begin</strong><br>Narrative, positioning, and media groundwork start week one.</div>
+            </div>
+          </div>
+        </div>
+        <a href="mailto:mark@tropoly.io" style="margin-top:24px;display:inline-block;background:var(--tl);color:#fff;font-size:14px;font-weight:500;padding:12px 28px;border-radius:40px;text-decoration:none;text-align:center">Get in touch →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="foot-in">
@@ -370,13 +420,13 @@ footer{background:var(--dk);padding:48px 36px;border-top:1px solid rgba(255,255,
 // NAV
 function navTo(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
 window.addEventListener('scroll',()=>{
-  ['hero','tl-sec','osc-sec','bud-sec'].reduce((found,id)=>{
+  ['hero','tl-sec','osc-sec','bud-sec','contact-sec'].reduce((found,id)=>{
     const el=document.getElementById(id);
     if(el&&el.getBoundingClientRect().top<200) return id;
     return found;
   },'hero');
   let active='hero';
-  ['hero','tl-sec','osc-sec','bud-sec'].forEach(id=>{
+  ['hero','tl-sec','osc-sec','bud-sec','contact-sec'].forEach(id=>{
     const el=document.getElementById(id);
     if(el&&el.getBoundingClientRect().top<200) active=id;
   });
@@ -582,89 +632,140 @@ function buildOsc(){
 }
 
 // BUDGET
+// mos = number of months for recurring items; 0 = one-time flat cost
 const BD={s:[
   {t:'Tropoly retainer fees',r:[
-    {n:'Core team retainer',sc:'Strategy, account management, creative direction, reporting & planning.',lo:8000,hi:10000,ph:'All phases (Apr 2026–Dec 2027)',du:'21 mo',no:'Base retainer — flat monthly fee.'},
-    {n:'GTM team add-on',sc:'Go-to-market specialists for campaign scope expansion.',lo:2000,hi:4000,ph:'Phase 2 onward (Jun 2026+)',du:'18 mo',no:'Layered on as workload increases toward campaign launch.'},
-    {n:'Campaign execution team add-on',sc:'Paid social managers, email execution, ad ops, A/B testing.',lo:3000,hi:6000,ph:'Campaign active (Aug 2026–Dec 2027)',du:'17 mo',no:'Activated at teaser trailer launch.'},
-    {n:'Web management team add-on',sc:'Ongoing website updates, SEO, ticketing integrations.',lo:1500,hi:2500,ph:'Website live (Jul 2026–Dec 2027)',du:'18 mo',no:'Spikes for major updates (Oscar run, premiere events).'},
-    {n:'FYC campaign specialist add-on',sc:'Oscar/awards specialist with Academy relationships.',lo:6000,hi:9500,ph:'FYC phase (Oct–Dec 2027)',du:'3 mo',no:'Short-term engagement timed to the FYC window.'},
-    {n:'Vietnamese / international outreach',sc:'Cultural liaison, translation, Vietnamese influencer management.',lo:1000,hi:2500,ph:'Nov 2026–Jun 2027',du:'8 mo',no:'Supports Vietnamese diaspora engagement.'},
+    {n:'Core team retainer',sc:'Strategy, account management, creative direction, reporting & planning.',lo:8000,hi:10000,ph:'All phases (Apr 2026–Dec 2027)',du:'21 mo',mos:21,no:'Base retainer — flat monthly fee covering all workstream oversight.'},
+    {n:'GTM team add-on',sc:'Go-to-market specialists for campaign scope expansion.',lo:2000,hi:4000,ph:'Phase 2 onward (Jun 2026+)',du:'18 mo',mos:18,no:'Layered on as workload increases toward campaign launch.'},
+    {n:'Campaign execution team add-on',sc:'Paid social managers, email execution, ad ops, A/B testing.',lo:3000,hi:6000,ph:'Campaign active (Aug 2026–Dec 2027)',du:'17 mo',mos:17,no:'Activated at teaser trailer launch.'},
+    {n:'Web management team add-on',sc:'Ongoing website updates, SEO, ticketing integrations.',lo:1500,hi:2500,ph:'Website live (Jul 2026–Dec 2027)',du:'18 mo',mos:18,no:'Spikes for major updates (Oscar run, premiere events).'},
+    {n:'FYC campaign specialist add-on',sc:'Oscar/awards specialist with Academy relationships.',lo:6000,hi:9500,ph:'FYC phase (Oct–Dec 2027)',du:'3 mo',mos:3,no:'Short-term engagement timed to the FYC window.'},
+    {n:'Vietnamese / international outreach',sc:'Cultural liaison, translation, Vietnamese influencer management.',lo:1000,hi:2500,ph:'Nov 2026–Jun 2027',du:'8 mo',mos:8,no:'Supports Vietnamese diaspora engagement.'},
   ]},
   {t:'Content production',r:[
-    {n:'Teaser trailer production',sc:'Professional edit, colour grade, sound mix.',lo:5000,hi:15000,ph:'Jul 2026 (one-time)',du:'—',no:'Scope depends on existing footage vs. new shoot days.'},
-    {n:'Full theatrical trailer',sc:'Full-length trailer (2–2.5 min) for Oscar run.',lo:8000,hi:20000,ph:'Apr–May 2027 (one-time)',du:'—',no:'Requires film to be substantially complete.'},
-    {n:'BTS & social content packages',sc:'Shoot-day BTS capture, editing, short-form social cuts.',lo:500,hi:1500,ph:'Shoot phases (May–Nov 2026)',du:'7 mo',no:'Ongoing during San Jose, USA Recreations, and Vietnam shoots.'},
-    {n:'Photography & key art',sc:'Documentary poster, promotional stills, social imagery.',lo:3000,hi:8000,ph:'Jun–Jul 2026 (one-time)',du:'—',no:'Key art is foundational to all campaign assets.'},
-    {n:'EPK (electronic press kit)',sc:'Film synopsis, director statement, talent bios, press stills.',lo:2000,hi:5000,ph:'May 2027 (one-time)',du:'—',no:'Required for festival submissions and press outreach.'},
+    {n:'Teaser trailer production',sc:'Professional edit, colour grade, sound mix.',lo:5000,hi:15000,ph:'Jul 2026 (one-time)',du:'—',mos:0,no:'Scope depends on existing footage vs. new shoot days.'},
+    {n:'Full theatrical trailer',sc:'Full-length trailer (2–2.5 min) for Oscar run.',lo:8000,hi:20000,ph:'Apr–May 2027 (one-time)',du:'—',mos:0,no:'Requires film to be substantially complete.'},
+    {n:'BTS & social content packages',sc:'Shoot-day BTS capture, editing, short-form social cuts.',lo:500,hi:1500,ph:'Shoot phases (May–Nov 2026)',du:'7 mo',mos:7,no:'Ongoing during San Jose, USA Recreations, and Vietnam shoots.'},
+    {n:'Photography & key art',sc:'Documentary poster, promotional stills, social imagery.',lo:3000,hi:8000,ph:'Jun–Jul 2026 (one-time)',du:'—',mos:0,no:'Key art is foundational to all campaign assets.'},
+    {n:'EPK (electronic press kit)',sc:'Film synopsis, director statement, talent bios, press stills.',lo:2000,hi:5000,ph:'May 2027 (one-time)',du:'—',mos:0,no:'Required for festival submissions and press outreach.'},
   ]},
   {t:'Digital & paid media spend',r:[
-    {n:'Paid social (Meta / Instagram / TikTok)',sc:'Audience building, trailer promotion, event awareness.',lo:2000,hi:5000,ph:'Campaign active (Aug 2026–Dec 2027)',du:'17 mo',no:'Scales up around major launches.'},
-    {n:'YouTube pre-roll / connected TV',sc:'Trailer distribution targeting documentary and film audiences.',lo:500,hi:2000,ph:'Trailer release phases',du:'6 mo',no:'CTV effective for documentary audiences.'},
-    {n:'Google display / search',sc:'Film title brand protection, search ads for screenings.',lo:300,hi:1000,ph:'Campaign active',du:'12 mo',no:'Supports direct ticket/event conversions.'},
-    {n:'Trade publication ads (Deadline / THR / Variety)',sc:'FYC print and digital ads targeting Academy members.',lo:15000,hi:40000,ph:'FYC phase Oct–Dec 2027 (one-time)',du:'—',no:'A full FYC trade campaign is industry standard.'},
-    {n:'Billboard / OOH — FYC (LA / NY)',sc:'Out-of-home on Sunset Strip / WeHo during FYC window.',lo:10000,hi:30000,ph:'FYC phase Nov 2027 (one-time)',du:'—',no:'Optional depending on budget.'},
+    {n:'Paid social (Meta / Instagram / TikTok)',sc:'Audience building, trailer promotion, event awareness.',lo:2000,hi:5000,ph:'Campaign active (Aug 2026–Dec 2027)',du:'17 mo',mos:17,no:'Scales up around major launches.'},
+    {n:'YouTube pre-roll / connected TV',sc:'Trailer distribution targeting documentary and film audiences.',lo:500,hi:2000,ph:'Trailer release phases',du:'6 mo',mos:6,no:'CTV effective for documentary audiences.'},
+    {n:'Google display / search',sc:'Film title brand protection, search ads for screenings.',lo:300,hi:1000,ph:'Campaign active',du:'12 mo',mos:12,no:'Supports direct ticket/event conversions.'},
+    {n:'Trade publication ads (Deadline / THR / Variety)',sc:'FYC print and digital ads targeting Academy members.',lo:15000,hi:40000,ph:'FYC phase Oct–Dec 2027 (one-time)',du:'—',mos:0,no:'A full FYC trade campaign is industry standard.'},
+    {n:'Billboard / OOH — FYC (LA / NY)',sc:'Out-of-home on Sunset Strip / WeHo during FYC window.',lo:10000,hi:30000,ph:'FYC phase Nov 2027 (one-time)',du:'—',mos:0,no:'Optional depending on budget.'},
   ]},
   {t:'PR & press relations',r:[
-    {n:'Documentary press & media relations',sc:'Outreach to IndieWire, Documentary Magazine, THR, Variety.',lo:1000,hi:2500,ph:'Campaign active (Aug 2026–Dec 2027)',du:'17 mo',no:'Specialist publicist may be engaged at premiere phase.'},
-    {n:'Festival premiere PR push',sc:'Press junket coordination at Tribeca and VIFF.',lo:3000,hi:8000,ph:'Jun 2027 + Oct 2027 (one-time each)',du:'—',no:'Per premiere. Includes travel, press materials.'},
-    {n:'Awards season / FYC PR',sc:'Awards publicist managing Academy member outreach, Q&A events.',lo:10000,hi:25000,ph:'FYC phase Oct–Dec 2027 (one-time)',du:'—',no:'Covers external PR execution during FYC window.'},
-    {n:'Critic & screening invitations',sc:'Screener distribution, event logistics for LA/NY Q&A screenings.',lo:500,hi:1500,ph:'Festival + FYC phase',du:'6 mo',no:'Includes coordination for LA/NY Q&A screenings.'},
+    {n:'Documentary press & media relations',sc:'Outreach to IndieWire, Documentary Magazine, THR, Variety.',lo:1000,hi:2500,ph:'Campaign active (Aug 2026–Dec 2027)',du:'17 mo',mos:17,no:'Specialist publicist may be engaged at premiere phase.'},
+    {n:'Festival premiere PR push',sc:'Press junket coordination at Tribeca and VIFF.',lo:3000,hi:8000,ph:'Jun 2027 + Oct 2027 (one-time each)',du:'—',mos:0,no:'Per premiere. Includes travel, press materials.'},
+    {n:'Awards season / FYC PR',sc:'Awards publicist managing Academy member outreach, Q&A events.',lo:10000,hi:25000,ph:'FYC phase Oct–Dec 2027 (one-time)',du:'—',mos:0,no:'Covers external PR execution during FYC window.'},
+    {n:'Critic & screening invitations',sc:'Screener distribution, event logistics for LA/NY Q&A screenings.',lo:500,hi:1500,ph:'Festival + FYC phase',du:'6 mo',mos:6,no:'Includes coordination for LA/NY Q&A screenings.'},
   ]},
   {t:'Events & activations',r:[
-    {n:'WFG network agent events',sc:'Internal WFG preview screenings, agent kit distribution events.',lo:500,hi:2000,ph:'Aug 2026 onward',du:'12 mo',no:"Leverages WFG's ~50,000 agent network."},
-    {n:'LA / NY FYC screening events',sc:'Academy member Q&A screenings. Venue rental, catering.',lo:5000,hi:15000,ph:'Oct–Dec 2027 (one-time)',du:'—',no:'2–4 events recommended.'},
-    {n:'Qualifying theatrical run',sc:'7-day minimum run in qualifying US metro area.',lo:5000,hi:20000,ph:'2027 if festival route insufficient',du:'—',no:'Only required if film does not qualify via festival award win.'},
-    {n:'Festival submission fees',sc:'Tribeca 2027, VIFF 2027, and additional qualifying festival submissions.',lo:2000,hi:6000,ph:'Oct 2026–Jun 2027',du:'—',no:'Estimated for 5–8 submissions.'},
+    {n:'WFG network agent events',sc:'Internal WFG preview screenings, agent kit distribution events.',lo:500,hi:2000,ph:'Aug 2026 onward',du:'12 mo',mos:12,no:"Leverages WFG's ~50,000 agent network."},
+    {n:'LA / NY FYC screening events',sc:'Academy member Q&A screenings. Venue rental, catering.',lo:5000,hi:15000,ph:'Oct–Dec 2027 (one-time)',du:'—',mos:0,no:'2–4 events recommended.'},
+    {n:'Qualifying theatrical run',sc:'7-day minimum run in qualifying US metro area.',lo:5000,hi:20000,ph:'2027 if festival route insufficient',du:'—',mos:0,no:'Only required if film does not qualify via festival award win.'},
+    {n:'Festival submission fees',sc:'Tribeca 2027, VIFF 2027, and additional qualifying festival submissions.',lo:2000,hi:6000,ph:'Oct 2026–Jun 2027',du:'—',mos:0,no:'Estimated for 5–8 submissions.'},
   ]},
   {t:'Technology, tools & platforms',r:[
-    {n:'CRM & email platform',sc:'CRM setup and subscription. List management, email campaigns.',lo:100,hi:300,ph:'Setup Jun 2026 onward',du:'19 mo',no:'May use existing Tropoly toolstack.'},
-    {n:'Website hosting & domain',sc:'Domain registration, hosting, SSL, Vercel deployment.',lo:50,hi:150,ph:'Jul 2026 onward',du:'18 mo',no:'Initial build covered in retainer scope.'},
-    {n:'Social scheduling & analytics',sc:'Scheduling tools, social listening, analytics dashboards.',lo:100,hi:300,ph:'Aug 2026 onward',du:'17 mo',no:'May be covered by existing Tropoly toolstack.'},
-    {n:'Academy Screening Room listing',sc:'Upload to Academy Screening Room for Documentary Branch FYC viewing.',lo:0,hi:0,ph:'Oct 2027 (one-time)',du:'—',no:'No fee for Documentary Feature category.'},
+    {n:'CRM & email platform',sc:'CRM setup and subscription. List management, email campaigns.',lo:100,hi:300,ph:'Setup Jun 2026 onward',du:'19 mo',mos:19,no:'May use existing Tropoly toolstack.'},
+    {n:'Website hosting & domain',sc:'Domain registration, hosting, SSL, Vercel deployment.',lo:50,hi:150,ph:'Jul 2026 onward',du:'18 mo',mos:18,no:'Initial build covered in retainer scope.'},
+    {n:'Social scheduling & analytics',sc:'Scheduling tools, social listening, analytics dashboards.',lo:100,hi:300,ph:'Aug 2026 onward',du:'17 mo',mos:17,no:'May be covered by existing Tropoly toolstack.'},
+    {n:'Academy Screening Room listing',sc:'Upload to Academy Screening Room for Documentary Branch FYC viewing.',lo:0,hi:0,ph:'Oct 2027 (one-time)',du:'—',mos:0,no:'No fee for Documentary Feature category.'},
   ]},
 ]};
+
 function fmt(n){if(!n||n===0)return'—';return'$'+Number(n).toLocaleString();}
 function pNum(s){return parseInt(String(s).replace(/[^0-9]/g,''))||0;}
-function calcSt(r,c){return r.reduce((s,x)=>s+(x[c]||0),0);}
-function calcGr(c){return BD.s.reduce((s,sec)=>s+calcSt(sec.r,c),0);}
+// Total cost for a row = rate × months (or flat if mos===0)
+function rowTotal(r,col){return r.mos>0 ? r[col]*r.mos : r[col];}
+function calcSt(rows,col){return rows.reduce((s,r)=>s+rowTotal(r,col),0);}
+function calcGr(col){return BD.s.reduce((s,sec)=>s+calcSt(sec.r,col),0);}
+function calcRec(col){return BD.s.reduce((s,sec)=>s+sec.r.filter(r=>r.mos>0).reduce((ss,r)=>ss+rowTotal(r,col),0),0);}
+function calcOT(col){return BD.s.reduce((s,sec)=>s+sec.r.filter(r=>r.mos===0).reduce((ss,r)=>ss+rowTotal(r,col),0),0);}
+
 function onEd(el,si,ri,col){BD.s[si].r[ri][col]=pNum(el.textContent);refTot();}
 function onBl(el,si,ri,col){const v=BD.s[si].r[ri][col];el.textContent=v?v.toLocaleString():'';}
+
 function refTot(){
   BD.s.forEach((sec,si)=>{
     const el=document.getElementById('st-'+si+'-l'),eh=document.getElementById('st-'+si+'-h');
-    if(el)el.textContent=fmt(calcSt(sec.r,'lo'));if(eh)eh.textContent=fmt(calcSt(sec.r,'hi'));
+    if(el)el.textContent=fmt(calcSt(sec.r,'lo'));
+    if(eh)eh.textContent=fmt(calcSt(sec.r,'hi'));
   });
   const gl=document.getElementById('g-l'),gh=document.getElementById('g-h');
-  if(gl)gl.textContent=fmt(calcGr('lo'));if(gh)gh.textContent=fmt(calcGr('hi'));
+  if(gl)gl.textContent=fmt(calcGr('lo'));
+  if(gh)gh.textContent=fmt(calcGr('hi'));
+  // Update live summary cards
+  const recL=calcRec('lo'),recH=calcRec('hi'),otL=calcOT('lo'),otH=calcOT('hi');
+  const sc=document.getElementById('sum-rec');if(sc)sc.textContent=fmt(recL)+' – '+fmt(recH);
+  const so=document.getElementById('sum-ot');if(so)so.textContent=fmt(otL)+' – '+fmt(otH);
+  const sg=document.getElementById('sum-grand');if(sg)sg.textContent=fmt(calcGr('lo'))+' – '+fmt(calcGr('hi'));
 }
+
 function buildBudget(){
   const b=document.getElementById('budget');let h='';
   BD.s.forEach((sec,si)=>{
     h+='<div class="bsec fade"><div class="bsec-t">'+sec.t+'</div>';
-    h+='<table class="bt"><thead><tr><th class="cn">Line item</th><th class="cs">Scope</th><th class="cl">Low ($)</th><th class="ch">High ($)</th><th class="cp">Phase</th><th class="cd">Duration</th><th class="cno">Notes</th></tr></thead><tbody>';
+    h+='<table class="bt"><thead><tr>';
+    h+='<th class="cn">Line item</th><th class="cs">Scope</th>';
+    h+='<th class="cl">Rate ($/mo or flat)</th><th class="ch">High</th>';
+    h+='<th class="cp">Phase</th><th class="cd">Duration</th>';
+    h+='<th style="width:12%;text-align:right">Total low</th><th style="width:12%;text-align:right">Total high</th>';
+    h+='<th class="cno">Notes</th></tr></thead><tbody>';
     sec.r.forEach((r,ri)=>{
-      const lv=r.lo?r.lo.toLocaleString():'';const hv=r.hi?r.hi.toLocaleString():'';
-      h+='<tr><td class="bn">'+r.n+'</td><td>'+r.sc+'</td>';
+      const lv=r.lo?r.lo.toLocaleString():'';
+      const hv=r.hi?r.hi.toLocaleString():'';
+      const tl=rowTotal(r,'lo'),th=rowTotal(r,'hi');
+      h+='<tr>';
+      h+='<td class="bn">'+r.n+'</td><td>'+r.sc+'</td>';
       h+='<td style="text-align:right;padding:5px 6px"><div contenteditable="true" onblur="onBl(this,'+si+','+ri+',\'lo\')" oninput="onEd(this,'+si+','+ri+',\'lo\')">'+lv+'</div></td>';
       h+='<td style="text-align:right;padding:5px 6px"><div contenteditable="true" onblur="onBl(this,'+si+','+ri+',\'hi\')" oninput="onEd(this,'+si+','+ri+',\'hi\')">'+hv+'</div></td>';
-      h+='<td>'+r.ph+'</td><td style="text-align:center;color:var(--muted);font-size:9.5px;font-weight:300;padding:7px 10px">'+r.du+'</td><td class="nt">'+r.no+'</td></tr>';
+      h+='<td>'+r.ph+'</td>';
+      h+='<td style="text-align:center;color:var(--muted);font-size:9.5px;font-weight:300;padding:7px 10px">'+r.du+'</td>';
+      h+='<td style="text-align:right;padding:7px 10px;font-size:9.5px;font-weight:500;color:var(--mid)" id="tl-'+si+'-'+ri+'-l">'+fmt(tl)+'</td>';
+      h+='<td style="text-align:right;padding:7px 10px;font-size:9.5px;font-weight:500;color:var(--mid)" id="tl-'+si+'-'+ri+'-h">'+fmt(th)+'</td>';
+      h+='<td class="nt">'+r.no+'</td>';
+      h+='</tr>';
     });
-    h+='<tr class="str"><td colspan="2">Subtotal — '+sec.t.toLowerCase()+'</td><td class="sv" id="st-'+si+'-l">'+fmt(calcSt(sec.r,'lo'))+'</td><td class="sv" id="st-'+si+'-h">'+fmt(calcSt(sec.r,'hi'))+'</td><td colspan="3" style="font-size:9px;color:var(--muted);font-style:italic;padding:8px 10px">Updates automatically</td></tr>';
+    h+='<tr class="str">';
+    h+='<td colspan="6">Subtotal — '+sec.t.toLowerCase()+'</td>';
+    h+='<td class="sv" id="st-'+si+'-l">'+fmt(calcSt(sec.r,'lo'))+'</td>';
+    h+='<td class="sv" id="st-'+si+'-h">'+fmt(calcSt(sec.r,'hi'))+'</td>';
+    h+='<td style="font-size:9px;color:var(--muted);font-style:italic;padding:8px 10px">Rate × duration for recurring; flat for one-time</td>';
+    h+='</tr>';
     h+='</tbody></table></div>';
   });
-  h+='<table class="bt" style="margin-top:.5rem"><tbody><tr class="ttr"><td colspan="2" style="padding-left:12px;font-size:11px;font-weight:600">Total estimated budget</td><td class="gv" id="g-l">'+fmt(calcGr('lo'))+'</td><td class="gv" id="g-h">'+fmt(calcGr('hi'))+'</td><td colspan="3" style="font-size:9px;color:var(--tlL);font-style:italic;padding:10px">Recurring retainer + one-time costs combined</td></tr></tbody></table>';
+  // Grand total bar
+  h+='<table class="bt" style="margin-top:.5rem"><tbody><tr class="ttr">';
+  h+='<td colspan="6" style="padding-left:12px;font-size:11px;font-weight:600">Total estimated budget</td>';
+  h+='<td class="gv" id="g-l">'+fmt(calcGr('lo'))+'</td>';
+  h+='<td class="gv" id="g-h">'+fmt(calcGr('hi'))+'</td>';
+  h+='<td style="font-size:9px;color:var(--tlL);font-style:italic;padding:10px">All recurring costs × duration + one-time costs</td>';
+  h+='</tr></tbody></table>';
+  // Live summary cards
+  const recL=calcRec('lo'),recH=calcRec('hi'),otL=calcOT('lo'),otH=calcOT('hi'),grL=calcGr('lo'),grH=calcGr('hi');
   h+='<div class="b-sum">';
-  [{l:'Core team retainer',v:'$8K–$10K',s:'per month · all 21 months'},
-   {l:'Full team (all add-ons)',v:'$13K–$22K',s:'per month at peak'},
-   {l:'FYC trade ads + OOH',v:'$25K–$70K',s:'one-time · FYC window'},
-   {l:'Festival + events',v:'$12K–$41K',s:'submissions + screenings'},
-   {l:'Recurring retainer total',v:'$168K–$295K',s:'21 months (low to high)'},
-   {l:'Total est. (recurring + one-time)',v:'$250K–$500K+',s:'full engagement'},
-  ].forEach(c=>{h+='<div class="b-card fade"><div class="b-card-l">'+c.l+'</div><div class="b-card-v">'+c.v+'</div><div class="b-card-s">'+c.s+'</div></div>';});
+  h+='<div class="b-card fade"><div class="b-card-l">Core team retainer</div><div class="b-card-v">$8K–$10K</div><div class="b-card-s">per month · 21 months = $168K–$210K</div></div>';
+  h+='<div class="b-card fade"><div class="b-card-l">Full team at peak (all add-ons active)</div><div class="b-card-v">$21K–$34K</div><div class="b-card-s">per month · retainer fees only</div></div>';
+  h+='<div class="b-card fade"><div class="b-card-l">Recurring costs total</div><div class="b-card-v" id="sum-rec">'+fmt(recL)+' – '+fmt(recH)+'</div><div class="b-card-s">all recurring items × their duration</div></div>';
+  h+='<div class="b-card fade"><div class="b-card-l">One-time costs total</div><div class="b-card-v" id="sum-ot">'+fmt(otL)+' – '+fmt(otH)+'</div><div class="b-card-s">production, PR, events, trade ads</div></div>';
+  h+='<div class="b-card fade"><div class="b-card-l">Grand total (recurring + one-time)</div><div class="b-card-v" id="sum-grand">'+fmt(grL)+' – '+fmt(grH)+'</div><div class="b-card-s">updates live as you edit any figure</div></div>';
   h+='</div>';
   b.innerHTML=h;
   document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+  // Wire row totals to update on edit
+  const origOnEd=window.onEd;
+  window.onEd=function(el,si,ri,col){
+    BD.s[si].r[ri][col]=pNum(el.textContent);
+    // Update row total cells
+    const tl=document.getElementById('tl-'+si+'-'+ri+'-l');
+    const th=document.getElementById('tl-'+si+'-'+ri+'-h');
+    if(tl)tl.textContent=fmt(rowTotal(BD.s[si].r[ri],'lo'));
+    if(th)th.textContent=fmt(rowTotal(BD.s[si].r[ri],'hi'));
+    refTot();
+  };
 }
 
 render();buildOsc();buildBudget();
